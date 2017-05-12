@@ -8,7 +8,8 @@ If things are not working as you expected, please check out the following small 
 ## Contents
 
 - ["Tobii.GameIntegration.dll could not be loaded"](#tobiigameintegrationdll-could-not-be-loaded)
-- ["Tobii Gaming SDK only supports building for Standalone build targets"](#tobii-gaming-sdk-only-supports-building-for-standalone-build-targets)
+- ["Multiple plugins with the same name 'tobii.gameintegration'"](#multiple-plugins-with-the-same-name-tobiigameintegration)
+- ["Tobii Unity SDK only supports building for Standalone build targets"](#tobii-unity-sdk-only-supports-building-for-standalone-build-targets)
 - ["I get invalid data"](#i-get-invalid-data)
 - ["My Gaze Aware objects are not reacting to eye-gaze"](#my-gaze-aware-objects-are-not-reacting-to-eye-gaze)
 - ["The gaze points are offset to the upper-left"](#the-gaze-points-are-offset-to-the-upper-left)
@@ -37,14 +38,19 @@ Locate the dll's in the Project window in the Unity Editor (`Assets/Tobii/Plugin
 [&uarr; Back to Top](#troubleshooting)
 
 
-## "Tobii Gaming SDK only supports building for Standalone build targets"
+## "Multiple plugins with the same name 'tobii.gameintegration'"
+
+See [3. Dll platform settings](#3-dll-platform-settings) above. You might need to uncheck `Any Platform` alternative in the `Select platforms for plugin` section, and only have the `Editor` and `Standalone` alternatives checked.
+
+
+## "Tobii Unity SDK only supports building for Standalone build targets"
 
 If you get the error message:
->"Tobii Gaming SDK only supports building for Standalone build targets. Eye-gaze data is only available on the Windows platform. Change platform in build settings to make the EyeTracking features work."
+>"Tobii Unity SDK only supports building for Standalone build targets. Eye-gaze data is only available on the Windows platform. Change platform in build settings to make the Eye Tracking features work."
 
 Check your build settings and make sure Platform is set to "PC, Mac & Linux Standalone". See also: [Set Windows as Target Platform](manual#set-windows-as-target-platform)
 
-The Tobii Gaming SDK for Unity only provides data on Windows 10/8.1/7, and only builds without errors for standalone platforms (Windows, Mac and Linux).
+The Tobii Unity SDK only provides data on Windows 10/8.1/7, and only builds without errors for standalone platforms (Windows, Mac and Linux).
 
 
 [&uarr; Back to Top](#troubleshooting)
@@ -59,7 +65,7 @@ Getting invalid eye-gaze data is _expected_ in the following situations:
 - for a few frames following the first call to a value function,
 - during game shutdown,
 - on unsupported platforms (like Mac and Linux)
-- when the Tobii Gaming SDK Framework is not getting any data from the eye tracker:
+- when the Tobii Unity SDK framework is not getting any data from the eye tracker:
   - when the eye tracker is not connected
   - when the user has disabled eye tracking in the Tobii EyeTracking settings
   - when you are not looking at the screen

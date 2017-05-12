@@ -32,7 +32,7 @@ ________________________________________________________________________________
 
 static class in `Tobii.Gaming` namespace
 
-The TobiiAPI is a static API that provides direct access to the most common and useful functionality of the Tobii Gaming Framework.
+The TobiiAPI is a static API that provides direct access to the most common and useful functionality of the Tobii Unity SDK framework.
 
 [&rarr; View in Manual](manual#tobii-api)
 
@@ -41,7 +41,7 @@ The TobiiAPI is a static API that provides direct access to the most common and 
 
 `TobiiAPI` is a static class with static methods to easily access data from a connected Tobii eye tracker.
 
-To get access to `TobiiAPI`, import the Tobii Gaming SDK into your project and add the following using (at the top of the script file where you want to use the Tobii API):
+To get access to `TobiiAPI`, import the Tobii Unity SDK into your project and add the following using (at the top of the script file where you want to use the Tobii API):
 
 ```csharp
 using Tobii.Gaming;
@@ -485,7 +485,7 @@ value type in `Tobii.Gaming` namespace
 
 A `GazePoint` represents a point on the screen where the user is looking (or where the user's eye-gaze intersects with the screen plane).
 
-Always check if a `GazePoint` is valid before using it, checking `IsValid` property or use `IsRecent()` function to ensure that it's both valid and recent. Invalid points will be returned by the Tobii Gaming framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetGazePoint()`](#tobiiapigetgazepoint) (or [`TobiiAPI.SubsribeGazePointData()`](#tobiiapisubscribegazeposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
+Always check if a `GazePoint` is valid before using it, checking `IsValid` property or use `IsRecent()` function to ensure that it's both valid and recent. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetGazePoint()`](#tobiiapigetgazepoint) (or [`TobiiAPI.SubsribeGazePointData()`](#tobiiapisubscribegazeposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
 
 The `PreciseTimestamp` can be used to compare the timestamps between two `GazePoint`s with high accuracy.
 
@@ -526,7 +526,7 @@ value type in `Tobii.Gaming` namespace
 
 A `HeadPose` represents the head position and rotation of the user's head.
 
-Always check if a `HeadPose` is valid before using it. Invalid points will be returned by the Tobii Gaming framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetHeadPose()`](#tobiiapigetheadpose) (or [`TobiiAPI.SubscribeHeadPoseData()`](#tobiiapisubscribeheadposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
+Always check if a `HeadPose` is valid before using it. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetHeadPose()`](#tobiiapigetheadpose) (or [`TobiiAPI.SubscribeHeadPoseData()`](#tobiiapisubscribeheadposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
 
 The `PreciseTimestamp` can be used to compare the timestamps between two `HeadPose`s with high accuracy.
 

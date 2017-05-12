@@ -1,3 +1,3 @@
 ---
-redirect_to: "/TobiiGamingUnitySDK/manual"
+redirect_to: "/UnitySDK/manual"
 ---

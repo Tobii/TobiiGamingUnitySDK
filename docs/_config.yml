@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-title: Gaming SDK for Unity
+title: Unity SDK for Desktop
 description: DOCUMENTATION
 gems:
   - jekyll-redirect-from

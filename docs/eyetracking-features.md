@@ -66,7 +66,7 @@ If the gaze point is inside the area, the opacity of the UI element is lerped fa
 
 If the gaze point falls outside the area, the transparency of the UI element is lerped slowly towards (almost) full transparency. Slow in this case is a value of around one second.
 
-For some UI elements it might be suitable to add a delay before starting to lerp towards full transparency so that the element stays fully opaque a little while after the user has stopped looking at it. (The Clean UI scripts included in the Tobii Gaming SDK for Unity do not have this kind of delay.)
+For some UI elements it might be suitable to add a delay before starting to lerp towards full transparency so that the element stays fully opaque a little while after the user has stopped looking at it. (The Clean UI scripts included in the Tobii Unity SDK do not have this kind of delay.)
 
 Another way to extend this algorithm could be to always display new messages at full transparency until they are looked at.
 
@@ -103,7 +103,7 @@ Interact at gaze allows the player to interact with an object in a game by press
 
 ### Algorithm - Interact at Gaze
 
-The Tobii Gaming SDK for Unity comes with built-in support for basic gaze-to-object-mapping. It uses ray casts to find which object is hit by each gaze point and keeps a score to decide which object is most likely looked at at any given moment. There are time thresholds so that only recent enough hits are considered, but also an onset threshold to avoid a too flickery behavior when a series of gaze points hits two objects close to each other.
+The Tobii Unity SDK comes with built-in support for basic gaze-to-object-mapping. It uses ray casts to find which object is hit by each gaze point and keeps a score to decide which object is most likely looked at at any given moment. There are time thresholds so that only recent enough hits are considered, but also an onset threshold to avoid a too flickery behavior when a series of gaze points hits two objects close to each other.
 
 For more information on how to use the Unity implementation, see the [Gaze Focus and GazeAware component](manual#gaze-focus-and-gazeaware-component) section in the User Manual.
 

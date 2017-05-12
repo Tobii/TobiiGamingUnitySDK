@@ -1,4 +1,4 @@
-# Tobii Gaming SDK for Unity
+# Tobii Unity SDK for Desktop
 
 
 # License

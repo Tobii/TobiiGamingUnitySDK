@@ -42,18 +42,18 @@ Make sure your system fulfills the [System Requirements](#system-requirements).
 
 Follow the instructions included with your eye tracker to download and install the correct Tobii Engine runtime software. Make sure the eye tracker and software is working correctly.
 
-### Step 2: Download the Tobii Gaming SDK for Unity
+### Step 2: Download the Tobii Unity SDK for Desktop
 
-If you haven't already done so, download the Tobii Gaming SDK for Unity from [Tobii Developer Zone (http://developer.tobii.com)](http://developer.tobii.com). You need to be logged in to access the Downloads page. You can create an account for free, it only takes a couple of minutes.
+If you haven't already done so, download the Tobii Unity SDK for Desktop from [Tobii Developer Zone (http://developer.tobii.com)](http://developer.tobii.com). You need to be logged in to access the Downloads page. You can create an account for free, it only takes a couple of minutes.
 
 
 ### Step 3: Import the SDK assets to a new Unity project
 
-Save the Tobii Gaming SDK for Unity unitypackage file in an easy to remember place on disk. This unitypackage includes all the Tobii Gaming SDK assets and demo scenes.
+Save the Tobii Unity SDK for Desktop unitypackage file in an easy to remember place on disk. This unitypackage includes all the Tobii Unity SDK assets and demo scenes.
 
 Open Unity, and create a New Unity Project. Select [Windows as Target Platform](#set-windows-as-target-platform).
 
-[Import all assets](#import-the-sdk-assets) from the Tobii Gaming SDK unitypackage.
+[Import all assets](#import-the-sdk-assets) from the Tobii Unity SDK for Desktop unitypackage.
 
 
 ### Step 4: Get to know the API and the eye-gaze data
@@ -83,7 +83,7 @@ Section contents:
 
 ### Import the assets
 
-Make sure Windows is the selected Target Platform in the build settings. Import the Tobii Gaming SDK for Unity unitypackage to your game (the `DemoScenes` folder is optional).
+Make sure Windows is the selected Target Platform in the build settings. Import the Tobii Unity SDK for Desktop unitypackage to your game (the `DemoScenes` folder is optional).
 
 
 ### Implement eye tracking features
@@ -162,7 +162,7 @@ Note that Gaze Aware objects might not be a good fit for your particular game ge
 
 ##### Configure Gaze Focus layers for Gaze Aware objects
 
-If you use the Gaze Aware component, you should set up the Gaze Focus detection layers. By default, the first time you press 'Play' in a game that uses some Tobii Gaming SDK feature, default settings for Gaze Focus are created. The default settings selects all existing  layers to be tested for Gaze Aware objects. If a new layer is added to the game at a later point, and you want it to be tested for Gaze Aware objects, the layer has to be manually checked in the Gaze Focus layers dropdown menu. (Note that UI elements like buttons and labels do not work with the Gaze Aware component since the feature only works with objects with a `UnityEngine.Collider`).
+If you use the Gaze Aware component, you should set up the Gaze Focus detection layers. By default, the first time you press 'Play' in a game that uses some Tobii Unity SDK feature, default settings for Gaze Focus are created. The default settings selects all existing  layers to be tested for Gaze Aware objects. If a new layer is added to the game at a later point, and you want it to be tested for Gaze Aware objects, the layer has to be manually checked in the Gaze Focus layers dropdown menu. (Note that UI elements like buttons and labels do not work with the Gaze Aware component since the feature only works with objects with a `UnityEngine.Collider`).
 
 Open the Eye Tracking Settings window from the Edit menu:
 `Edit` &rarr; `Eye Tracking Settings...`
@@ -177,7 +177,7 @@ Click to open the Gaze Focus Layers multi-selection dropdown and make sure that 
 
 ### Build for standalone
 
-The Tobii Gaming SDK assets include an editor script for copying the correct plugin dll's to the build output folder. The Tobii Gaming SDK features are currently only available and working for PC (Windows 10/8.1/7), but the framework compiles on Mac and Linux as well (without copying the dll's).
+The Tobii Unity SDK assets include an editor script for copying the correct plugin dll's to the build output folder. The Tobii Unity SDK features are currently only available and working for PC (Windows 10/8.1/7), but the framework compiles on Mac and Linux as well (without copying the dll's).
 
 
 [&uarr; Back to Section start](#integrate-the-sdk-into-your-game) | [&uarr; Back to Top](#user-manual)
@@ -187,9 +187,9 @@ The Tobii Gaming SDK assets include an editor script for copying the correct plu
 
 It might be tempting to skip this part of the documentation, but I promise you that it will save you time later to at least browse through it.
 
-This section gives an overview of the features available in the Tobii Gaming SDK for Unity. It introduces the core concepts and gives you insight into what tools and features the SDK has to offer you, and how they work.
+This section gives an overview of the features available in the Tobii Unity SDK. It introduces the core concepts and gives you insight into what tools and features the SDK has to offer you, and how they work.
 
-For API details on each class and function, see the Tobii Gaming SDK for Unity [Scripting Reference](scripting-api).
+For API details on each class and function, see the Tobii Unity SDK [Scripting Reference](scripting-api).
 
 Section contents:
 
@@ -203,7 +203,7 @@ Section contents:
 
 ### TobiiAPI
 
-The static functions of the [TobiiAPI](scripting-api#tobiiapi) class is the essential API of the Tobii Gaming SDK for Unity.
+The static functions of the [TobiiAPI](scripting-api#tobiiapi) class is the essential API of the Tobii Unity SDK.
 
 Include the line
 
@@ -270,7 +270,7 @@ In most cases it's also very important to know that you are working with recent 
 
 ### Gaze Focus and GazeAware component
 
-The Tobii Gaming SDK has built-in support for mapping eye-gaze data to game-objects. We call this feature Gaze Focus. Rather than just mapping every gaze point to a game-object the idea is that an object that has Gaze Focus is intentionally focused by the user. To do this, we are under the hood using algorithms that take series of gaze points, the history of focused objects and timings in human perception into account. 
+The  Tobii Unity SDK has built-in support for mapping eye-gaze data to game-objects. We call this feature Gaze Focus. Rather than just mapping every gaze point to a game-object the idea is that an object that has Gaze Focus is intentionally focused by the user. To do this, we are under the hood using algorithms that take series of gaze points, the history of focused objects and timings in human perception into account. 
 
 These gaze to object mapping algorithms were introduced in the 2.0 version of the SDK. The plan is to refine the algorithms continually in future versions of the framework. The goal is to have a fast and robust calculation that works for different eye tracker models with different characteristics in accuracy and precision, but also over a broad set of different eye-gaze characteristics of end-users.
 
@@ -287,9 +287,9 @@ Gaze Focus is only available for 3D game objects with a `UnityEngine.Collider`. 
 
 ## System Requirements
 
-Version 3.0 of the Tobii Gaming SDK for Unity requires the following setup on your computer:
+Version 3.0 of the Tobii Unity SDK for Desktop requires the following setup on your computer:
 
-- Unity 5 / 4.5 or higher (the Demo Scenes require Unity 5)
+- Unity 5 / 4.5 or higher (the Demo Scenes require Unity 5.3.7f1, the scripts work with Unity 5.0.0f4)
 - Windows 10, 8.1, or 7
 - Tobii Eye Tracking Core Software (either downloaded install bundle for peripheral eye tracker, or pre-installed on integrated systems)
 - Tobii consumer eye tracker peripheral or built-in device. You can find information about available products here: [https://tobiigaming.com/products/](https://tobiigaming.com/products/).
@@ -323,8 +323,8 @@ In the Unity Editor menu, select: `Assets` &rarr; `Import Assets` &rarr; `Custom
 
 ![](./images/editor-menu-assets-import-package-custom-package.png)
 
-- Browse to the root folder of the Tobii Gaming SDK package you have downloaded and extracted to disk
-- Select the Tobii Gaming SDK unitypackage
+- Browse to the root folder of the Tobii Unity SDK for Desktop package you have downloaded and extracted to disk
+- Select the Tobii Unity SDK for Desktop unitypackage
 - Import all assets in the package
 
 [&uarr; Back to Top](#user-manual)
