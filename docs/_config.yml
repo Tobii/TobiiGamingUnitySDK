@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: Gaming SDK for Unity
+description: DOCUMENTATION
+gems:
+  - jekyll-redirect-from
