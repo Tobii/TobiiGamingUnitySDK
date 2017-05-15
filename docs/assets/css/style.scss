@@ -304,7 +304,7 @@ html header .nav-trigger:checked ~ .navigation {
     display: block;
     list-style: none;
     background: #00beff!important;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: fixed;
     top: $headerheight;
     right: 0;
