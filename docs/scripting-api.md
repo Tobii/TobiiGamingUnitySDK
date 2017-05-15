@@ -180,7 +180,7 @@ static function on [`TobiiAPI`](#tobiiapi)
 
 | Name      | Type           | Description |
 | :-------- | :------------- | :---------- |
-| gazePoint | [`GazePoint`](#gazepoint) | Typically an already handled gaze point. The function will return all gaze points newer than this gaze point. |
+| gazePoint | [`GazePoint`](#gazepoint) | Typically an already handled gaze point. The function will return all gaze points newer than this gaze point, but at most 500 ms old. An invalid gaze point as parameter will return all data points newer than 500 ms.|
 
 ### Returns
 
@@ -194,7 +194,7 @@ Gets all [`GazePoint`](#gazepoint)s that have been received from the eye tracker
 
 This function is useful when you want to do your own advanced filtering of the gaze point data and include all received gaze points in the calculation. If you use [`GetGazePoint()`](#tobiiapigetgazepoint) you will likely miss some points from the eye tracker, since the game and the eye tracker will probably not run in the exact same frequency.
 
-You can save your last handled data point in the Update loop, and use it as a parameter for this function in the next Update loop to retrieve all new data points.
+You can save your last handled data point in the Update loop, and use it as a parameter for this function in the next Update loop to retrieve all new data points. For the first iteration, when the data point is invalid, the function will return all points received within the last 500 ms.
 
 
 ```csharp
@@ -203,7 +203,7 @@ using System.Collections.Generic;
 
 public class ExampleClass : MonoBehaviour
 {
-    private GazePoint _lastHandledPoint;
+    private GazePoint _lastHandledPoint = GazePoint.Invalid;
 
     Update()
     {
@@ -272,7 +272,7 @@ static function on [`TobiiAPI`](#tobiiapi)
 
 | Name      | Type           | Description |
 | :-------- | :------------- | :---------- |
-| headPose | [`HeadPose`](#headpose) | Typically an already handled head pose. The function will return all head poses newer than this head pose. |
+| headPose | [`HeadPose`](#headpose) | Typically an already handled head pose. The function will return all head poses newer than this head pose, but at most 500 ms old. An invalid head pose as parameter will return all data points newer than 500 ms. |
 
 ### Returns
 
@@ -286,7 +286,7 @@ Gets all [`HeadPose`](#headpose)s that have been received from the eye tracker s
 
 This function is useful when you want to do your own advanced filtering of the head pose data and include all received head poses in the calculation. If you use [`GetHeadPose()`](#tobiiapigetheadpose) you will likely miss some points from the eye tracker, since the game and the eye tracker will probably not run in the exact same frequency.
 
-You can save your last handled data point in the Update loop, and use it as a parameter for this function in the next Update loop to retrieve all new data points.
+You can save your last handled data point in the Update loop, and use it as a parameter for this function in the next Update loop to retrieve all new data points. For the first iteration, when the data point is invalid, the function will return all points received within the last 500 ms.
 
 
 ```csharp
@@ -295,7 +295,7 @@ using System.Collections.Generic;
 
 public class ExampleClass : MonoBehaviour
 {
-    private HeadPose _lastHandledPoint;
+    private HeadPose _lastHandledPoint = HeadPose.Invalid;
 
     Update()
     {
