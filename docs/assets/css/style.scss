@@ -48,28 +48,10 @@ html a code {
     color: inherit;
 }
 
+$headerheight: 78px;
+
 header img.starting-logo {
     height: 50px;
-}
-
-@media print, screen and (min-width: 961px) {
-
-$headerheight: 78px;
-$contentswidth: 290px;
-
-.wrapper {
-    width: auto;
-	margin: $headerheight 10px 0px ($contentswidth + 22px);
-    border-left: 1px solid #777;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
-
-:target:before {
-  content:"";
-  display:block;
-  height:$headerheight + 10px; /* fixed header height*/
-  margin:-($headerheight + 10px) 0 0; /* negative fixed header height */
 }
 
 html body {
@@ -86,6 +68,7 @@ html header {
 	width: auto;
 	background: rgba(0,0,0,100);
 	padding: 15px;
+    z-index: 999;
 }
 
 html section, html footer {
@@ -94,10 +77,62 @@ html section, html footer {
     width: auto;
 	padding: 10px 0px;
     max-width: 1100px;
+    border: none;
+}
+
+html section table {
+    width: auto;
+}
+
+header .navigation {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+header h1 {
+    margin: 0 0 1px 0;
+    font-family: Roboto, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header h3 {
+    margin: 0;
+    font-family: Roboto, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header img.starting-logo {
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+:target:before {
+  content:"";
+  display:block;
+  height:$headerheight + 10px; /* fixed header height*/
+  margin:-($headerheight + 10px) 0 0; /* negative fixed header height */
+}
+
+html .wrapper {
+    width: auto;
+	margin: $headerheight 10px 0px 10px;
+    padding-bottom: 10px;
 }
 
 html footer {
 	margin-top: 0px;
+}
+
+@media print, screen and (min-width: 961px) {
+
+$contentswidth: 290px;
+
+html .wrapper {
+    width: auto;
+	margin: $headerheight 10px 0px ($contentswidth + 22px);
+    border-left: 1px solid #777;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 html #contents {
@@ -129,37 +164,15 @@ html #contents + ul ul {
 	padding-left: 20px;
 }
 
-html section table {
-    width: auto;
 }
 
-header .menu {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
+@media print, screen and (min-width: 1281px) {
 
-header h1 {
-    margin: 0 0 1px 0;
-    font-family: Roboto, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-header h3 {
-    margin: 0;
-    font-family: Roboto, "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-header img.starting-logo {
-    height: 50px;
-    float: left;
-    margin-right: 10px;
-}
-
-header .menu p {
+header .navigation p {
 	display: inline-block;
 }
 
-header .menu a {
+header .navigation a {
     border-bottom-color: rgb(226, 226, 226);
     border-bottom-style: none;
     border-bottom-width: 0px;
@@ -218,7 +231,7 @@ header .menu a {
     -webkit-font-smoothing: antialiased;
 }
 
-header .menu a:after {
+header .navigation a:after {
     -webkit-transition: width .3s ease-out,left .3s ease-out,border-color .3s ease-out;
     transition: width .3s ease-out,left .3s ease-out,border-color .3s ease-out;
     position: relative;
@@ -231,50 +244,96 @@ header .menu a:after {
     padding-bottom: inherit;
 }
 
-header .menu a.active {
+header .navigation a.active {
     color: #ffffff!important;
 }
 
-html header .menu a.active:after {
+html header .navigation a.active:after {
     width: 100%;
     left: 0;
     border-color: #ffffff!important;
 }
 
-header .menu a:hover:after {
+header .navigation a:hover:after {
     width: 100%;
     left: 0;
     border-color: #00beff!important;
 }
 
-@media print, screen and (max-width: 1280px) {
-header .menu a {
-    margin-left: 6px;
-    margin-right: 6px;
+header .nav-trigger {
+    display: none;
 }
 
-header h1 {
-    font-size: 14px;
-    margin: 12px 0 4px 0;
+header label[for="nav-trigger"] {
+    display: none;
+}
+
+}
+
+@media print, screen and (max-width: 1280px) {
+header .nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+header label[for="nav-trigger"] {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+header label[for="nav-trigger"] {
+    /* ... previous styles here... */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect style='fill:rgb(255,255,255);' y='24' width='30' height='6'/><rect style='fill:rgb(255,255,255);' y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+}
+
+header .nav-trigger:checked + label {
+}
+
+html header .navigation {
+    display: none;
+}
+
+html header .nav-trigger:checked ~ .navigation {
+    display: block;
+    list-style: none;
+    background: #00beff!important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: $headerheight;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+
+html header .navigation > p {
+    display: block;
+    margin: 25px;
+    font-size: 28.8px !important;
+    line-height: 39.6px !important;
+    text-align: center;
+}
+
+html header .navigation > p a {
+    color: #fff;
+    opacity: .7;
+}
+
+html header .navigation > p a:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+header .navigation a.active {
+    color: #ffffff!important;
+    opacity: 1;
 }
 
 } 
-
-@media (max-width: 1035px) {
-
-header .menu a {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-
-}
-
-}
-
-@media print, screen and (max-width: 960px) {
-
-header .view a {
-	display: block;
-}
-
-}

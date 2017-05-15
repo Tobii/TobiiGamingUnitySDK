@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Tobii Unity SDK for Desktop - {{ page.title }}</title>
+    <title>{{ page.title }} - Tobii Unity SDK for Desktop</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" href="{{ site.github.url }}/images/Tobii_favicon_black_32x32.png">
@@ -19,13 +19,16 @@
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <h3>{{ site.description | default: site.github.project_tagline }}</h3>
 
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger"></label>
+
 {% assign current = page.url | downcase | split: '/' %}
-        <div class="menu">
-          <p><a href="{{ site.github.url }}/manual" {% if current[1] == 'manual.html' %}class='active'{% endif %}>User Manual</a></p>
-          <p><a href="{{ site.github.url }}/scripting-api" {% if current[1] == 'scripting-api.html' %}class='active'{% endif %}>Scripting API</a></p>
-          <p><a href="{{ site.github.url }}/eyetracking-features" {% if current[1] == 'eyetracking-features.html' %}class='active'{% endif %}>Eye Tracking Features</a></p>
-          <p><a href="{{ site.github.url }}/troubleshooting" {% if current[1] == 'troubleshooting.html' %}class='active'{% endif %}>Troubleshooting</a></p>
-          <p><a href="http://developer.tobii.com/"><i>DevZone →</i></a></p>
+        <div class="navigation">
+          <p class="nav-item"><a href="{{ site.github.url }}/manual" {% if current[1] == 'manual.html' %}class='active'{% endif %}>User Manual</a></p>
+          <p class="nav-item"><a href="{{ site.github.url }}/scripting-api" {% if current[1] == 'scripting-api.html' %}class='active'{% endif %}>Scripting API</a></p>
+          <p class="nav-item"><a href="{{ site.github.url }}/eyetracking-features" {% if current[1] == 'eyetracking-features.html' %}class='active'{% endif %}>Eye Tracking Features</a></p>
+          <p class="nav-item"><a href="{{ site.github.url }}/troubleshooting" {% if current[1] == 'troubleshooting.html' %}class='active'{% endif %}>Troubleshooting</a></p>
+          <p class="nav-item"><a href="http://developer.tobii.com/"><i>DevZone →</i></a></p>
 	    	</div>
 
       </header>
