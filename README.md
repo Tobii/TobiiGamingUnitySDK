@@ -1,6 +1,5 @@
 # Tobii Unity SDK for Desktop
 
-
 ## On-line Documentation
 
 [https://tobii.github.io/UnitySDK/](https://tobii.github.io/UnitySDK/)
@@ -13,6 +12,11 @@ This API is governed by the following license agreement. Before you download or 
 [**License Agreement Online**](https://developer.tobii.com/license-agreement/)
 
 The license can also be found under `Assets\Tobii\License.pdf`.
+
+
+## Download
+
+[https://github.com/Tobii/UnitySDK/releases](https://github.com/Tobii/UnitySDK/releases)
 
 
 ## Migration Guide 2.0 to 3.0
