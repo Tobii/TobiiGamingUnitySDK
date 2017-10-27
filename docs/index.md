@@ -1,3 +1,3 @@
 ---
-redirect_to: "/UnitySDK/manual"
+redirect_to: "/manual"
 ---
