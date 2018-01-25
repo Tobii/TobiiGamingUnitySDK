@@ -48,6 +48,11 @@ html a code {
     color: inherit;
 }
 
+html a:hover, html a:focus {
+    color: #069;
+    font-weight: normal;
+}
+
 $headerheight: 78px;
 
 header img.starting-logo {
