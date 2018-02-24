@@ -161,7 +161,7 @@ public class ExampleClass : MonoBehaviour
         if (gazePoint.IsRecent()) // Use IsValid property instead to process old but valid data
         {
             // Note: Values can be negative if the user looks outside the game view.
-            print("Gaze point on Screen (X,Y): " + gazePoint.Screen.X + ", " + gazePoint.Screen.Y);
+            print("Gaze point on Screen (X,Y): " + gazePoint.Screen.x + ", " + gazePoint.Screen.y);
         }
     }
 }
@@ -252,8 +252,8 @@ public class ExampleClass : MonoBehaviour
         HeadPose headPose = TobiiAPI.GetHeadPose();
         if (headPose.IsRecent())
         {
-            print("HeadPose Position (X,Y,Z): " + headPose.Position.X + ", " + headPose.Position.Y + ", " + headPose.Position.Z);
-            print("HeadPose Rotation (X,Y,Z): " + headPose.Rotation.eulerAngles.X + ", " + headPose.Rotation.eulerAngles.Y + ", " + headPose.Rotation.eulerAngles.Z);
+            print("HeadPose Position (X,Y,Z): " + headPose.Position.x + ", " + headPose.Position.y + ", " + headPose.Position.z);
+            print("HeadPose Rotation (X,Y,Z): " + headPose.Rotation.eulerAngles.x + ", " + headPose.Rotation.eulerAngles.y + ", " + headPose.Rotation.eulerAngles.z);
         }
     }
 }
