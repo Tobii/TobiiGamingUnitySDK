@@ -9,7 +9,7 @@
 
 This API is governed by the following license agreement. Before you download or use it, you **MUST READ AND ACCEPT** it.
 
-[**License Agreement Online**](https://developer.tobii.com/license-agreement/)
+[**License Agreement Online**](https://github.com/Tobii/UnitySDK/blob/master/License.pdf)
 
 The license can also be found under `Assets\Tobii\License.pdf`.
 
