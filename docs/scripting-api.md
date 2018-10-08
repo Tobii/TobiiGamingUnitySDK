@@ -3,7 +3,7 @@ title: "Scripting API"
 ---
 # Scripting API
 
->*SDK version: 3.0 Beta*
+>*SDK version: 3.1*
 
 ## Contents
 
@@ -15,9 +15,8 @@ title: "Scripting API"
   - [GetHeadPose](#tobiiapigetheadpose)
   - [GetHeadPosesSince](#tobiiapigetheadposessince)
   - [GetUserPresence](#tobiiapigetuserpresence)
+  - [IsConnected](#tobiiapiisconnected)
   - [SetCurrentUserViewPointCamera](#tobiiapisetcurrentuserviewpointcamera)
-  - [SubscribeGazePointData](#tobiiapisubscribegazepointdata)
-  - [SubscribeHeadPoseData](#tobiiapisubscribeheadposedata)
 - [Components](#components)
   - [GazeAware](#gazeaware)
 - [Data Types and Enums](#data-types-and-enums)
@@ -51,7 +50,7 @@ using Tobii.Gaming;
 
 `TobiiAPI` also provides information about which `UnityEngine.GameObject` the user focuses using eye-gaze. Only gaze aware objects will be considered for gaze focus detection. The way to make an object gaze-aware is to add the [`GazeAware`](#gazeaware) component to it.
 
-### Static Functions
+### Static Functions and Properties
 
 | Name  | Description |
 | :---- | :---------- |
@@ -62,9 +61,8 @@ using Tobii.Gaming;
 | [GetHeadPose](#tobiiapigetheadpose) | Gets the last (newest) [`HeadPose`](#headpose) |
 | [GetHeadPosesSince](#tobiiapigetheadposessince) | Gets the head poses since a given [`HeadPose`](#headpose). |
 | [GetUserPresence](#tobiiapigetuserpresence) | Gets the user presence status. |
+| [IsConnected](#tobiiapiisconnected) | Returns `true` if Tobii Eye Tracker is connected. |
 | [SetCurrentUserViewPointCamera](#tobiiapisetcurrentuserviewpointcamera) | Sets the camera used for gaze focus detection. |
-| [SubscribeGazePointData](#tobiiapisubscribegazepointdata)   | Subscribes to gaze point data. |
-| [SubscribeHeadPostData](#tobiiapisubscribeheadposedata)     | Subscribes to head pose data. |
 
 [&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
 
@@ -147,7 +145,7 @@ static function on [`TobiiAPI`](#tobiiapi)
 
 Gets the last [`GazePoint`](#gazepoint).
 
-The [`TobiiAPI`](#tobiiapi) class is initialized lazily if [`TobiiAPI.SubscribeGazePointData()`](#tobiiapisubscribegazepointdata) is not called first. This means that the data provider is started at the first call to this function (or the [`TobiiAPI.GetFocusedObject()`](#tobiiapigetfocusedobject) function), and the function will return an invalid value for some frames until valid data is received from the eye tracker.
+The [`TobiiAPI`](#tobiiapi) class is initialized lazily. This means that the data provider is started at the first call to this function (or the [`TobiiAPI.GetFocusedObject()`](#tobiiapigetfocusedobject) function), and the function will return an invalid value for some frames until valid data is received from the eye tracker.
 
 ```csharp
 using Unity.Engine;
@@ -239,7 +237,7 @@ static function on [`TobiiAPI`](#tobiiapi)
 
 Gets the last [`HeadPose`](#headpose).
 
-The [`TobiiAPI`](#tobiiapi) class is initialized lazily if [`TobiiAPI.SubscribeHeadPoseData()`](#tobiiapisubscribeheadposedata) is not called first. This means that the data provider is started at the first call to this function, and the function will return an invalid value for some frames until valid data is received from the eye tracker.
+The [`TobiiAPI`](#tobiiapi) class is initialized lazily. This means that the data provider is started at the first call to this function, and the function will return an invalid value for some frames until valid data is received from the eye tracker.
 
 ```csharp
 using Unity.Engine;
@@ -352,6 +350,19 @@ public class ExampleClass : MonoBehaviour
 
 [&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
 
+## TobiiAPI.IsConnected
+
+static property on [`TobiiAPI`](#tobiiapi)
+
+`public static` `bool` `IsConnected`
+
+### Returns
+
+| Type | Description |
+| :--- | :---------- |
+| `bool` | Result is `true` if Tobii eye tracker is connected to the system and `false` otherwise. |
+
+[&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
 
 ## TobiiAPI.SetCurrentUserViewPointCamera
 
@@ -380,34 +391,6 @@ To decide which camera corresponds to the user's view point, it should fulfill t
 [&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
 
 
-## TobiiAPI.SubscribeGazePointData
-
-static function on [`TobiiAPI`](#tobiiapi)
-
-`public static void SubscribeGazePointData()`
-
-### Description
-
-Starts the gaze point data provider.
-
-Use this method if you want to initialize the gaze point data provider explicitly rather than to use the default lazy initialization. If this method is not used, the gaze point data provider will be initialized and started at the first call to [`TobiiAPI.GetGazePoint()`](#tobiiapigetgazepoint) or [`TobiiAPI.GetFocusedObject()`](#tobiiapigetfocusedobject), and there will be some frames before that method returns valid gaze points.
-
-[&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
-
-
-## TobiiAPI.SubscribeHeadPoseData
-
-static function on [`TobiiAPI`](#tobiiapi)
-
-`public static void SubscribeHeadPoseData()`
-
-### Description
-
-Starts the head pose data provider.
-
-Use this method if you want to initialize the head pose data provider explicitly rather than to use the default lazy initialization. If this method is not used, the head pose data provider will be initialized and started at the first call to [`TobiiAPI.GetHeadPose()`](#tobiiapigetheadpose), and there will be some frames before that method returns valid gaze points.
-
-[&uarr; Back to Section start](#tobiiapi) | [&uarr; Back to Top](#scripting-api)
 
 ____________________________________________________________________________________________________
 
@@ -485,7 +468,7 @@ value type in `Tobii.Gaming` namespace
 
 A `GazePoint` represents a point on the screen where the user is looking (or where the user's eye-gaze intersects with the screen plane).
 
-Always check if a `GazePoint` is valid before using it, checking `IsValid` property or use `IsRecent()` function to ensure that it's both valid and recent. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetGazePoint()`](#tobiiapigetgazepoint) (or [`TobiiAPI.SubsribeGazePointData()`](#tobiiapisubscribegazeposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
+Always check if a `GazePoint` is valid before using it, checking `IsValid` property or use `IsRecent()` function to ensure that it's both valid and recent. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetGazePoint()`](#tobiiapigetgazepoint) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
 
 The `PreciseTimestamp` can be used to compare the timestamps between two `GazePoint`s with high accuracy.
 
@@ -526,7 +509,7 @@ value type in `Tobii.Gaming` namespace
 
 A `HeadPose` represents the head position and rotation of the user's head.
 
-Always check if a `HeadPose` is valid before using it. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetHeadPose()`](#tobiiapigetheadpose) (or [`TobiiAPI.SubscribeHeadPoseData()`](#tobiiapisubscribeheadposedata)) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
+Always check if a `HeadPose` is valid before using it. Invalid points will be returned by the Tobii Unity SDK framework during startup and shutdown, a few frames after calling [`TobiiAPI.GetHeadPose()`](#tobiiapigetheadpose) for the first time, and if the data provider is stopped for some reason. Invalid points will always be returned on unsupported standalone platforms, currently Mac and Linux.
 
 The `PreciseTimestamp` can be used to compare the timestamps between two `HeadPose`s with high accuracy.
 

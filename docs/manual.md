@@ -111,6 +111,7 @@ Here is a list of features up for grab, and their scripts are all available in t
 - [Aim at Gaze](eyetracking-features#aim-at-gaze) aims your gun at the gaze point when you press an aim button
 - [Interact at Gaze](eyetracking-features#interact-at-gaze) lets you interact directly with what you are looking at
 - [Map Navigation](eyetracking-features#map-navigation) pans to or zooms where you are looking at the press of a button
+- [Dynamic Light Adaptation](eyetracking-features#dynamic-light-adaptation) adjusts scene light exposure depending on your gaze point
 
 
 [&uarr; Back to Section start](#integrate-the-sdk-into-your-game) | [&uarr; Back to Top](#user-manual)
