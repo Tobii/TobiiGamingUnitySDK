@@ -3,7 +3,7 @@ title: "User Manual"
 ---
 # User Manual
 
->*SDK version: 3.0 Beta*
+>*SDK version: 3.1*
 
 
 ## Good Choice :)
