@@ -3,7 +3,7 @@ title: "Scripting API"
 ---
 # Scripting API
 
->*SDK version: 3.1*
+>*SDK version: 4.0*
 
 ## Contents
 

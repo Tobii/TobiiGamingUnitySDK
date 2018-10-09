@@ -3,7 +3,7 @@ title: "User Manual"
 ---
 # User Manual
 
->*SDK version: 3.1*
+>*SDK version: 4.0*
 
 
 ## Good Choice :)
@@ -288,7 +288,7 @@ Gaze Focus is only available for 3D game objects with a `UnityEngine.Collider`. 
 
 ## System Requirements
 
-Version 3.0 of the Tobii Unity SDK for Desktop requires the following setup on your computer:
+Version 4.0 of the Tobii Unity SDK for Desktop requires the following setup on your computer:
 
 - Unity 5 / 4.5 or higher (the Demo Scenes require Unity 5.3.7f1, the scripts work with Unity 5.0.0f4)
 - Windows 10, 8.1, or 7
