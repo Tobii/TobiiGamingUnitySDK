@@ -13,6 +13,7 @@ Thanks for choosing Tobii! You have invested your money and curiosity in an eye 
 
 ## Contents
 
+- [Analytical Use](#analytical-use)
 - [Getting Started](#getting-started)
 - [Integrate the SDK into your game](#integrate-the-sdk-into-your-game)
   - [Import the assets](#import-the-assets)
@@ -27,6 +28,9 @@ Thanks for choosing Tobii! You have invested your money and curiosity in an eye 
 - [System Requirements](#system-requirements)
 - [Appendix: Unity Editor Howto's](#appendix-unity-editor-howtos)
 
+
+## Analytical Use
+Tobii’s consumer eye trackers are primarily intended for personal interaction use and not for analytical purposes. Any application that stores or transfers eye tracking data must have a special license from Tobii. Read more at [https://analyticaluse.tobii.com/](https://analyticaluse.tobii.com/?utm_source=tobii.github.io/UnitySDK/manual)
 
 ## Getting Started
 
