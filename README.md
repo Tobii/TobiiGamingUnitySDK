@@ -16,7 +16,7 @@ The license can also be found under `Assets\Tobii\License.pdf`.
 
 ## Download
 
-[https://developer.tobii.com/consumer-eye-trackers/unity-sdk/](https://developer.tobii.com/consumer-eye-trackers/unity-sdk/)
+[https://assetstore.unity.com/packages/tools/input-management/tobii-eye-tracking-sdk-90604](https://assetstore.unity.com/packages/tools/input-management/tobii-eye-tracking-sdk-90604)
 
 
 ## Migration Guide 2.0 to 3.0
@@ -31,4 +31,4 @@ If you have problems, questions, ideas, or suggestions, please use the forums on
 
 Visit the Tobii Developer Zone web site for the latest news and downloads:
 
-https://developer.tobii.com/
+https://developer.tobii.com/pc-gaming/unity-sdk/
