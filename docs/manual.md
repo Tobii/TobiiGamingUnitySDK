@@ -30,7 +30,7 @@ Thanks for choosing Tobii! You have invested your money and curiosity in an eye 
 
 
 ## Analytical Use
-Tobii’s consumer eye trackers are primarily intended for personal interaction use and not for analytical purposes. Any application that stores or transfers eye tracking data must have a special license from Tobii. Read more at [https://analyticaluse.tobii.com/](https://analyticaluse.tobii.com/?utm_source=tobii.github.io/UnitySDK/manual)
+Tobii’s consumer eye trackers are primarily intended for personal interaction use and not for analytical purposes. Any application that stores or transfers eye tracking data must have a special license from Tobii. Read more at [https://analyticaluse.tobii.com/](https://analyticaluse.tobii.com/?utm_source=tobiitech.github.io/unity-sdk/manual)
 
 ## Getting Started
 
