@@ -2,7 +2,7 @@
 
 ## Documentation
 
-[https://tobii.github.io/UnitySDK/](https://tobii.github.io/UnitySDK/)
+[https://tobiitech.github.io/unity-sdk/](https://tobiitech.github.io/unity-sdk/)
 
 
 ## License
@@ -23,7 +23,7 @@ The license can also be found under `Assets\Tobii\License.pdf`.
 
 The previous Tobii Unity SDK version was called "Tobii EyeTracking SDK for Unity 5 - v2.0 (Beta)". If you have been using that version, there is a migration guide here that highlights the major and breaking changes between the 2.0 and 3.0 versions of the SDK:
 
-[https://tobii.github.io/UnitySDK/migration-guide-2.0-to-3.0](https://tobii.github.io/UnitySDK/migration-guide-2.0-to-3.0)
+[https://tobiitech.github.io/unity-sdk/migration-guide-2.0-to-3.0](https://tobiitech.github.io/unity-sdk/migration-guide-2.0-to-3.0)
 
 ## Contact ##
 
